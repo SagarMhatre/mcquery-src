@@ -46,6 +46,7 @@ function reattemptAll(questionsetId) {
     document.getElementById('dashboard').style.display = 'none';
     // Show the quiz container
     document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('navigation').style.display = 'block';
     // Load the quiz data (assuming you have a function to load the quiz)
     loadQuiz(questionsetId);
 }
@@ -280,7 +281,7 @@ async function submitQuiz() {
         const correctIdx = q.choices.findIndex(answerObj => answerObj.isCorrect);
         const userIdx = userAnswers[index];
         const result = {
-            question: q.questionText,
+            question: q.text,
             choices: q.choices,
             correctIdx: correctIdx,
             userIdx: userIdx
